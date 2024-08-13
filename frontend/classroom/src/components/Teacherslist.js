@@ -7,7 +7,7 @@ function Teacherslist() {
 
   const fetchTeachers=async ()=>{
     try {
-      const response = await Axios.get('https://classroom-uy4z.vercel.app/teachers')
+      const response = await Axios.get('https://classroom-back.onrender.com/teachers')
       setTeachers(response.data.teachers)
   } catch (error) {
       console.error(error)
