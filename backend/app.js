@@ -1,3 +1,4 @@
+require('dotenv').config();
 const Express=require('express')
 const app=Express()//creating an express application
 
@@ -7,11 +8,11 @@ const bodyParser=require('body-parser')
 const jwt =require('jsonwebtoken')
 const Mongoose=require('mongoose')
 app.use(bodyParser.json())
-
+//https://create-react-app.dev/docs/deployment/
 app.use(Cors())
 
 //connecting to database
-Mongoose.connect("mongodb://127.0.0.1:27017/classroomDatabase")
+Mongoose.connect(process.env.MONGODB_URI)
 const userSchema=Mongoose.Schema({
     username:{type:String,required:true},
     email:{type:String, required:true, unique:true},
@@ -75,7 +76,7 @@ const addPrincipal=async ()=>{
 addPrincipal()
 
 //login credential
-const jwt_secret='your_secret_key'
+const jwt_secret=process.env.JWT_SECRET
 app.post('/login',async function(req,res){
     const {loginEmail,loginPassword}=req.body
 try{
@@ -305,5 +306,5 @@ app.delete('/students/:id', async function(req,res){
     const deletestudent = await User.findByIdAndDelete(id)
     return res.status(200).json({message:'successfully deleted'})
 })
-
-app.listen(8080)
+const PORT = process.env.PORT || 8080;
+app.listen(PORT)
