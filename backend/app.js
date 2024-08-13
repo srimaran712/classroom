@@ -3,7 +3,7 @@ const Express=require('express')
 const app=Express()//creating an express application
 
 const Cors=require('cors')
-const bcrypt=require('bcrypt')//for hashing passwords
+const bcrypt=require('bcryptjs')//for hashing passwords
 const bodyParser=require('body-parser')
 const jwt =require('jsonwebtoken')
 const Mongoose=require('mongoose')
