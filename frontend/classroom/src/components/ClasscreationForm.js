@@ -16,7 +16,7 @@ const [teacherobjid, setTeacherObjId] = useState('')
 const [studentid, setStudentId] = useState([])
 const fetchteacher = async () => {
   try {
-      const response = await Axios.get('http://localhost:8080/teachers')
+      const response = await Axios.get('https://classroom-uy4z.vercel.app/teachers')
       setTeachers(response.data.teachers)
   } catch (error) {
       console.error(error)

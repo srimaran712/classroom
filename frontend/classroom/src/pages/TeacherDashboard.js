@@ -11,7 +11,7 @@ const TeacherDashboard=()=>{
     const fetchdetails= async()=>{
         try{
             const token = localStorage.getItem('token');
-            const response= await Axios.get('http://localhost:8080/dashboard-teacher',
+            const response= await Axios.get('https://classroom-uy4z.vercel.app/dashboard-teacher',
                {
                 headers:{
                       Authorization: `Bearer ${token}`

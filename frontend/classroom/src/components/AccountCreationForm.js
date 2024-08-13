@@ -13,7 +13,7 @@ function AccountCreationForm() {
     const handleAccountsubmit= async(e)=>{
         e.preventDefault()
         try{
-          const response=  await Axios.post('http://localhost:8080/create-account',{
+          const response=  await Axios.post('https://classroom-uy4z.vercel.app/create-account',{
                 username,useremail,userpassword,userrole
             })
             console.log(response.data)

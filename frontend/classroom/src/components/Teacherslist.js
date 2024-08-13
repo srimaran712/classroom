@@ -7,7 +7,7 @@ function Teacherslist() {
 
   const fetchTeachers=async ()=>{
     try {
-      const response = await Axios.get('http://localhost:8080/teachers')
+      const response = await Axios.get('https://classroom-uy4z.vercel.app/teachers')
       setTeachers(response.data.teachers)
   } catch (error) {
       console.error(error)
@@ -23,7 +23,7 @@ function Teacherslist() {
 
   const handleDelete= async(id)=>{
    try{
-    const response= await Axios.delete(`http://localhost:8080/teachers/${id}`)
+    const response= await Axios.delete(`https://classroom-uy4z.vercel.app/teachers/${id}`)
     console.log(response.data.message)
     setTeachers((prevTeachers) => prevTeachers.filter(teacher => teacher._id !== id));
    } catch(error){
