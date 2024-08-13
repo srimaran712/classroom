@@ -10,7 +10,7 @@ const Mongoose=require('mongoose')
 app.use(bodyParser.json())
 //https://create-react-app.dev/docs/deployment/
 app.use(Cors({
-  origin: ['https://classroom-frontendredeploy.onrender.com','http://localhost:3000'], 
+  origin: 'https://classroom-frontendredeploy.onrender.com', 
 }))
 
 //connecting to database
