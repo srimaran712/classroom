@@ -23,7 +23,7 @@ function Teacherslist() {
 
   const handleDelete= async(id)=>{
    try{
-    const response= await Axios.delete(`https://classroom-uy4z.vercel.app/teachers/${id}`)
+    const response= await Axios.delete(`https://classroom-back.onrender.com/teachers/${id}`)
     console.log(response.data.message)
     setTeachers((prevTeachers) => prevTeachers.filter(teacher => teacher._id !== id));
    } catch(error){
