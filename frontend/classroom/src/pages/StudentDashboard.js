@@ -14,7 +14,7 @@ function StudentDashboard() {
                 console.error('Token not found');
                 return;
             }
-            const response= await Axios.get('http://localhost:8080/dashboard-students',
+            const response= await Axios.get('https://classroom-uy4z.vercel.app/dashboard-students',
                {
                 headers:{
                       Authorization: `Bearer ${token}`
