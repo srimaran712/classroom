@@ -9,7 +9,9 @@ const jwt =require('jsonwebtoken')
 const Mongoose=require('mongoose')
 app.use(bodyParser.json())
 //https://create-react-app.dev/docs/deployment/
-app.use(Cors())
+app.use(Cors({
+  origin: 'https://classroom-frontendredeploy.onrender.com', 
+}))
 
 //connecting to database
 Mongoose.connect(process.env.MONGODB_URI)
