@@ -16,7 +16,7 @@ const [teacherobjid, setTeacherObjId] = useState('')
 const [studentid, setStudentId] = useState([])
 const fetchteacher = async () => {
   try {
-      const response = await Axios.get('https://classroom-uy4z.vercel.app/teachers')
+      const response = await Axios.get('https://classroom-back.onrender.com/teachers')
       setTeachers(response.data.teachers)
   } catch (error) {
       console.error(error)
@@ -25,7 +25,7 @@ const fetchteacher = async () => {
 
 const fetchstudent = async () => {
   try {
-      const response = await Axios.get('http://localhost:8080/students')
+      const response = await Axios.get('https://classroom-back.onrender.com/students')
       setStudents(response.data.students)
   } catch (error) {
       console.error(error)
@@ -61,7 +61,7 @@ const handleTeacherChange = (e) => {
         }
 
           try{
-const response=await Axios.post('http://localhost:8080/create-class',{classname,starttime,endtime,link,days,teacherobjid, studentid})
+const response=await Axios.post('https://classroom-back.onrender.com',{classname,starttime,endtime,link,days,teacherobjid, studentid})
 console.log(response.data.message)
       setClassName('')
       setStartTime('')

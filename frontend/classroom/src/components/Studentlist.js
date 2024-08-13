@@ -7,7 +7,7 @@ function Studentlist() {
 
   const fetchStudents=async ()=>{
     try {
-      const response = await Axios.get('https://classroom-uy4z.vercel.app/students')
+      const response = await Axios.get('https://classroom-back.onrender.com/students')
       setStudents(response.data.students)
   } catch (error) {
       console.error(error)
@@ -23,7 +23,7 @@ function Studentlist() {
 
   const handleDelete= async(id)=>{
    try{
-    const response= await Axios.delete(`https://classroom-uy4z.vercel.app/students/${id}`)
+    const response= await Axios.delete(`https://classroom-back.onrender.com/students/${id}`)
     console.log(response.data.message)
     setStudents((prevStudent) => prevStudent.filter(student => student._id !== id));
    } catch(error){
