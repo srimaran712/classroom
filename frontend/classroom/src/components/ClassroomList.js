@@ -8,7 +8,7 @@ const ClassroomList = () => {
   const[classlist,setClasslist]=useState([])
   const fetchClass= async()=>{
     try{
-      const response= await Axios.get('http://localhost:8080/classroom')
+      const response= await Axios.get('https://classroom-uy4z.vercel.app/classroom')
       setClasslist(response.data.createdClass)
     }catch(error){
       console.error(error)
